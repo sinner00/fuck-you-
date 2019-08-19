@@ -35,9 +35,10 @@
     let last = document.getElementById('LastName');
     let display = document.getElementById('display');
     let index = 0;
+    let users = [];
 
     function createUser() {
-        let users = JSON.parse(localStorage.getItem('users'));
+         users = JSON.parse(localStorage.getItem('users')) || [];
         let family = { firstName : name.value, lastName : last.value};
 
 
@@ -48,6 +49,7 @@
             + "<span style='margin-right: 5px'>.</span>"
             + "First name: " +  family.firstName
             + ", Last name: " + family.lastName +"</p>";
+
 
         display.appendChild(newItem);
 
@@ -64,17 +66,24 @@
    function showUsers() {
        let parsedUsers = JSON.parse(localStorage.getItem("users"));
 
-       for(let i = 0;i < parsedUsers.length; i++) {
-           let newItem = document.createElement('p');
-           newItem.innerHTML =
-               "<p>"
-               + i
-               + "<span style='margin-right: 5px'>.</span>"
-               + "First name: " + parsedUsers[i].firstName + ","
-               + " Last name: " + parsedUsers[i].lastName + "</p>";
-
-           display.appendChild(newItem)
+       if(parsedUsers === null) {
+           let errorMessage = document.createElement("p");
+           errorMessage.innerHTML = "<span style='color: red;font-weight: 600'>Firstly you need to create record</span>"
+           display.appendChild(errorMessage);
+           return;
        }
+
+           for(let i = 0;i < parsedUsers.length; i++) {
+               let newItem = document.createElement('p');
+               newItem.innerHTML =
+                   "<p>"
+                   + i
+                   + "<span style='margin-right: 5px'>.</span>"
+                   + "First name: " + parsedUsers[i].firstName + ","
+                   + " Last name: " + parsedUsers[i].lastName + "</p>";
+
+               display.appendChild(newItem)
+           }
    }
 </script>
 
