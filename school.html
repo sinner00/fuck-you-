@@ -37,6 +37,30 @@
     let index = 0;
     let users = [];
 
+
+
+
+
+    const isPersonal = true;
+    const isDeleted = false;
+    const isSubmited = true;
+
+    const reviewdClasses = {
+        isPersonal,
+        isDeleted,
+        isSubmited
+    };
+
+    const className = ["baseclass"];
+
+    for(let i in reviewdClasses){
+        !!reviewdClasses[i] && className.push(i)
+    };
+
+
+    console.log(className)
+
+
     function createUser() {
         users = JSON.parse(localStorage.getItem('users')) || [];
         let family = { firstName : name.value, lastName : last.value};
@@ -94,6 +118,9 @@
                        display.appendChild(newItem)
                    }*/
     }
+
+
+
 </script>
 
 
