@@ -18,41 +18,109 @@
             <input id="ValueName" value="">
         </label>
         <label>
-        <input id="LastName" value="">
+            <input id="LastName" value="">
         </label>
-        <button id="insert" onclick="what()" type="submit"> Insert </button>
+        <button id="insert" onclick="createUser()" type="submit"> Insert </button>
     </legend>
 </fieldset>
- <div>
-     <button id="show" onclick="what1()">
-         Show
-     </button>
-     <p id="display">
-     </p>
- </div>
+<div>
+    <button id="show" onclick="showUsers()">
+        Show
+    </button>
+    <div id="display"> </div>
+</div>
 
 <script>
     let name = document.getElementById('ValueName');
     let last = document.getElementById('LastName');
-    //let display = document.getElementById('display');
-    let family = { firstName : " " , lastName : ""};
-    function what() {
-        let n = name.value;
-        let l = last.value;
-        family.firstName = n;
-        family.lastName = l ;
-        //  serial our family to storage
-        let obj = JSON.stringify(family);
-        localStorage.setItem('myKey' , obj);
-     location.reload()
+    let display = document.getElementById('display');
+    let index = 0;
+    let users = [];
 
+
+
+
+
+    const isPersonal = true;
+    const isDeleted = false;
+    const isSubmited = true;
+
+    const reviewdClasses = {
+        isPersonal,
+        isDeleted,
+        isSubmited
+    };
+
+    const className = ["baseclass"];
+
+    for(let i in reviewdClasses){
+        !!reviewdClasses[i] && className.push(i)
+    };
+
+
+    console.log(className)
+
+
+    function createUser() {
+        users = JSON.parse(localStorage.getItem('users')) || [];
+        let family = { firstName : name.value, lastName : last.value};
+
+
+        let newItem = document.createElement("p");
+        newItem.innerHTML =
+            "<p>"
+            + index
+            + "<span style='margin-right: 5px'>.</span>"
+            + "First name: " +  family.firstName
+            + ", Last name: " + family.lastName +"</p>";
+
+
+        display.appendChild(newItem);
+
+        let newUsers = [...users, family ];
+        localStorage.setItem("users", JSON.stringify(newUsers));
+
+        name.value = "";
+        last.value = "";
+        index ++;
     }
-    // button to show our obj
-   function what1() {
-       let retur = JSON.parse(localStorage.getItem('myKey'));
-       document.getElementById('display').innerHTML = retur.firstName + retur.lastName;
 
-   }
+
+    // button to show our obj
+    function showUsers() {
+        let parsedUsers = JSON.parse(localStorage.getItem("users"));
+
+        if(parsedUsers === null) {
+            let errorMessage = document.createElement("p");
+            errorMessage.innerHTML =
+                "<span style='color: red;font-weight: 600'>" +
+                "Firstly you need to create record" +
+                "</span>"
+            display.appendChild(errorMessage);
+            return;
+        }
+
+
+        //First variant
+        const markup = `<ul>${parsedUsers.map(user=>`<li> First name ${user.firstName} Last name ${user.lastName} </li>`)}</ul> `;
+        display.innerHTML = markup;
+
+        /*Second variant
+                   for(let i = 0; i < parsedUsers.length; i++) {
+                       let newItem = document.createElement('p');
+                       newItem.innerHTML =
+                           "<p>"
+                           + i
+                           + "<span style='margin-right: 5px'>.</span>"
+                           + "First name: " + parsedUsers[i].firstName + ","
+                           + " Last name: " + parsedUsers[i].lastName + "</p>";
+
+                       display.appendChild(newItem)
+                   }*/
+    }
+
+
+
 </script>
 
 
