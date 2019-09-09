@@ -1,0 +1,72 @@
+.pods-single-border {
+  border-bottom: 2px solid #DFE6EE;
+  padding-bottom: 6px;
+  align-items: center;
+}
+
+
+.search-pods-icon {
+  color: #007bff;
+  font-size: 20px;
+  margin-left: 5px;
+  position: relative;
+  top: 5px;
+}
+
+
+.pod-name {
+  color: #7E8895;
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+
+.blog-title-icons {
+  font-size: 22px;
+  cursor: pointer;
+
+  .fa-th-large {
+    color: #007bff;
+  }
+}
+
+.admin-add-post {
+  background-color:#007bff;
+  color: white;
+  font-size: 14px;
+  padding: 120px 35px;
+
+  &--btn {
+    margin: auto;
+    padding: 12px 40px;
+    border-radius: 4px;
+    font-size: 22px;
+    color: #007bff;
+    font-weight: 500;
+    i {
+      color: #007bff;
+      margin-right: 5px;
+      font-size: 18px;
+    }
+  }
+}
+
+
+.admin-post {
+  padding-bottom: 100px;
+  border: 2px dashed grey;
+
+  &--img {
+    background-image: url("http://media.springernature.com/lw630/nature-cms/uploads/cms/pages/2913/top_item_image/milkywayhp-9b9d818cdc253f6800fab45810cf3492.jpg");
+    height: 178px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--description {
+    padding: 0 20px;
+    font-size: 14px;
+  }
+}
