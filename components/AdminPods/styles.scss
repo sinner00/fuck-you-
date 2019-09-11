@@ -1,0 +1,137 @@
+.pods-upper-right-section {
+  border: none;
+}
+
+
+.pods-question-mark {
+  width: 63px;
+  height: 42px;
+  background: lightgrey;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+
+.pods-upper-section {
+  background: #DFE6EE;
+  padding: 30px;
+  .dashboard-section-title {
+    margin-right: 0;
+  }
+}
+
+.left-section-pods {
+  padding: 30px 0;
+}
+
+.add-pod-description {
+  font-size: 14px;
+}
+
+
+.search-pods-icon {
+  font-size: 30px;
+}
+
+
+.entries-number {
+  transition: .3s;
+  font-size: 14px;
+}
+
+
+.dashboard-section-title {
+  select {
+    border: 2px solid lightgrey;
+    width: 200px;
+    height: 33px;
+    margin-left: 20px;
+    padding-left: 5px;
+  }
+
+  .arrows {
+    background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA3klEQVRIS+3VMU9CMRTF8d8zBL+aizoQFhx0kUk33RzdYMNFXUFnYeGrYYyaJiUxJHDLSxodbNKpfeffc9/pbaPyaCrr+3OA++z4rtT5Pg5GuMnCY9yWQEoBE1xhlUUP8YDrCBIB0vojLvGO0yz4hm4JJAKcYYoPHGOZAUdYoIMBXrc5iQAHeMlzviFygj7O8dkWEJU4XI8chALRhn9AVKHf70VRTHu4wFfbmKZLNKt50dLBnna0imcMd/2I0phWa3Y/D1e1Xa9BCZJG0VuQNpaWKMx72xS1Fl5/WN3BN+AgJhnZQlq4AAAAAElFTkSuQmCC');
+    background-position: calc(100% - .5rem), 100% 0;
+    background-size:  1em 1em;
+    background-repeat: no-repeat;
+  }
+}
+
+
+
+
+.arrows {
+  color: black;
+  padding: 5px;
+}
+
+.pods-single-table-row {
+  border: 2px solid #DFE6EE;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 15px;
+  transition: .3s;
+  i {
+    margin-right: 10px;
+  }
+}
+
+
+
+.pods-single-icons {
+  transition: .3s;
+  i {
+    opacity: 0;
+    color: #007bff;
+    font-size: 25px;
+    padding: 0 5px;
+  }
+  .fa-trash-alt {
+    color: red;
+  }
+}
+
+
+.pods-single-table-row:hover {
+  background: #DFE6EE;
+  .entries-number {
+    display: none;
+  }
+  .pods-single-icons {
+    i {
+      opacity: 1;
+    }
+  }
+}
+
+
+.pods-single-title {
+  .fa-low-vision {
+    font-size: 22px;
+    margin-left: 20px;
+  }
+  .showVision {
+    opacity: 1;
+  }
+}
+
+
+.hidden_visibility {
+  font-size: 14px;
+  i{
+    position: relative;
+    top: 2px;
+  }
+}
+
+
+.admin-pods-select {
+  padding: 5px;
+  color: black;
+}

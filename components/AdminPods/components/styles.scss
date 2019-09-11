@@ -1,0 +1,27 @@
+.pods-single-border {
+  border-bottom: 2px solid #DFE6EE;
+  padding-bottom: 6px;
+  align-items: center;
+}
+
+.pods-number {
+  transition: .3s;
+  font-size: 12px;
+  color: #7E8895;
+  position: relative;
+  bottom: 5px;
+}
+
+
+.pod-name {
+  color: #7E8895;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+
+.back-btn {
+  font-size: 19px;
+  color: #007bff;
+}
