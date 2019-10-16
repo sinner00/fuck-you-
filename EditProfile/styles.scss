@@ -1,0 +1,64 @@
+.edit-profile {
+  &--upper-section {
+    text-align: center;
+    background-color: #042B43;
+    padding: 45px 0 20px;
+    color: #FFFFFF;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: -0.75px;
+    line-height: 58px;
+
+
+
+    .title {
+      max-width: 600px;
+      text-align: left;
+      margin: auto;
+      font-weight: 600;
+    }
+  }
+
+  &--main-section {
+    max-width: 600px;
+    margin: 36px auto 0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.06);
+
+    .title {
+      color: #042B43;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.45px;
+      line-height: 44px;
+    }
+
+    .img-container {
+      height: 97px;
+      width: 97px;
+      border-radius: 4px;
+      margin: 10px auto;
+      &--img {
+        width: 100%;
+        border-radius: 4px;
+      }
+
+      &--icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #0274A7;
+      }
+    }
+
+    .subtitle {
+      color: #505A62;
+      font-size: 16px;
+      letter-spacing: -0.19px;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+}
